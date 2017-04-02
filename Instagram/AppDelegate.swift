@@ -25,6 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://insta-demo.herokuapp.com/parse"
             })
         )
+        if PFUser.current() != nil {
+            print("There is a current user")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+            
+            
+            window?.rootViewController = vc
+        }
+        
+        
         
         return true
     }
