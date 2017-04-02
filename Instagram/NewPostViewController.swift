@@ -20,6 +20,11 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func onCaptionClearText(_ sender: Any) {
+        captionTextField.text = ""
+    }
+    
     @IBAction func onPost(_ sender: Any) {
         // caption
         let caption = captionTextField.text

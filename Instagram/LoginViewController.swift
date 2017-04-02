@@ -21,6 +21,14 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func onEditingClearText(_ sender: Any) {
+        usernameTextField.text = ""
+    }
+    
+    @IBAction func onEditingClearTextPassword(_ sender: Any) {
+        passwordTextField.text = ""
+    }
     @IBAction func onSignIn(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
             if user != nil {

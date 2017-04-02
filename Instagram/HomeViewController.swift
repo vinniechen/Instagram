@@ -70,12 +70,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
         
-        //Initialize caption and username labels from the post
         let post = feed[indexPath.row]
         cell.captionLabel.text = post["caption"] as! String?
         cell.usernameLabel.text = post["username"] as! String?
-        print(post["username"] as! String?)
-        //Retrieve photo data and update the cell's image with it
+        cell.timestampLabel.text = post["_created_at"] as! String?
+        //print(post["username"] as! String?)
+        
+        // Get photo data and add to cell
         let photo = post["media"] as! PFFile
         photo.getDataInBackground { (data: Data?, error: Error?) in
             if let data = data {

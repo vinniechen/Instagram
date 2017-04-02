@@ -9,6 +9,7 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
+    @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
